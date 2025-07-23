@@ -1438,3 +1438,23 @@ html, body {
     width: 36px;
   }
 }
+
+/* style.css */
+
+.links a {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 300px;
+  background: #1db954;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.links a:hover {
+  background: #17a44d;
+}
