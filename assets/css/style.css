@@ -1447,7 +1447,7 @@ html, body {
   padding: 0.75rem 1rem;
   width: 100%;
   max-width: 300px;
-  background: #1db954;
+  background: black;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -1456,5 +1456,5 @@ html, body {
 }
 
 .links a:hover {
-  background: #17a44d;
+  background: grey;
 }
