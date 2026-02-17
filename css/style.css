@@ -278,7 +278,7 @@ html, body {
   position: relative;
   padding: 0 30px 0 15px;
   height: 60px;
-  background-color: #051F1E;
+  background-color: #000;
   z-index: 2;
 }
 
@@ -289,7 +289,7 @@ html, body {
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #051F1E;
+  background-color: #000;
 }
 
 .site-logo a {
@@ -299,13 +299,13 @@ html, body {
   margin-top: 17px;
   font-size: 26px;
   line-height: 26px;
-  color: #051F1E;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 /* Navigation */
 .site-navigation {
-  background-color: #051F1E;
+  background-color: #000;
 }
 
 .site-navigation.affix {
@@ -403,7 +403,7 @@ html, body {
   }
   .site-navigation .navbar-collapse {
     position: relative;
-    background-color: #051F1E;
+    background-color: #000;
     z-index: 99;
     text-align: center;
     border-top: 0;
@@ -1255,11 +1255,16 @@ html, body {
 
 /* FOOTER
 ================================================== */
+.site-footer {
+  background-color: #000;
+  color: #ffffff;
+}
+
 .site-footer .container-fluid {
   position: relative;
   padding: 70px 15px;
   text-align: center;
-  border-bottom: 1px solid #051F1E;
+  border-bottom: 1px solid #000;
 }
 
 .site-footer .container {
@@ -1276,22 +1281,22 @@ html, body {
 
 .site-footer ul a {
   font-size: 12px;
-  color: #666;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 .site-footer ul a:hover {
-  color: #051F1E;
+  color: #cccccc;
 }
 
 .site-footer a {
   font-size: 12px;
-  color: #666;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 .site-footer a:hover {
-  color: #051F1E;
+  color: #cccccc;
 }
 
 .site-footer .rectangle {
