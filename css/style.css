@@ -1,6 +1,7 @@
+/* 1. Global Reset - Essential for 100vh to work */
 html, body {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Keeps the body locked to the screen height */
     margin: 0;
     padding: 0;
     font-family: "montserrat", sans-serif;
@@ -43,16 +44,17 @@ a:hover { text-decoration: underline; }
     font-size: 14px;
 }
 
-/* 3. Hero Section (The Logic Fix) */
+/* 3. Hero Section (The Fix) */
 #top.hero {
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* Fills remaining space */
     background: url('assets/img/background.png') center no-repeat;
     background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Spreads content: top, middle, bottom */
+    justify-content: space-between; /* This forces content to split Top, Middle, Bottom */
     position: relative;
+    padding-top: 60px; /* Prevents the header from overlapping centered content */
 }
 
 .background-overlay:before {
@@ -66,8 +68,9 @@ a:hover { text-decoration: underline; }
     z-index: 0;
 }
 
+/* 4. Content Centering */
 .hero-content {
-    flex-grow: 1;
+    flex-grow: 1; /* This "spacer" pushes the footer down */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,11 +88,12 @@ a:hover { text-decoration: underline; }
 
 .hero-job a { color: #fff; }
 
-/* 4. Hero Footer (Pins copyright to bottom of screen) */
+/* 5. Footer (Pushed to absolute bottom of hero) */
 .hero-footer {
-    padding: 30px 0;
+    padding: 20px 0 30px 0;
     z-index: 1;
     width: 100%;
+    text-align: center;
 }
 
 .copyright {
@@ -100,9 +104,9 @@ a:hover { text-decoration: underline; }
     opacity: 0.8;
 }
 
-/* 5. Animated Arrow */
+/* 6. Animated Arrow */
 .hero-arrow {
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
     z-index: 1;
 }
 
