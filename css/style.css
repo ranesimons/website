@@ -1,112 +1,61 @@
-/* 1. Global Reset & Lock Viewport */
+/* 1. Force the root containers to stay at 100% with NO scrolling */
 html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat", sans-serif;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important; /* This is the "Gemini" lock */
+    position: fixed !important; /* Prevents mobile browser jumping */
     background-color: #000;
-    
-    /* This prevents the "bounce" and scrolling */
-    overflow: hidden; 
-    position: fixed; 
 }
 
-/* 2. Header & Navigation */
-.site-header {
-    height: 60px;
-    position: absolute;
-    width: 100%;
-    z-index: 1005;
-}
-
-.site-navigation { background-color: #000; }
-
-.site-logo a {
-    font-family: "montserrat", sans-serif;
-    font-size: 26px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.navbar-nav > li > a {
-    color: #ffffff !important;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-/* 3. Hero Section (Locked Height) */
+/* 2. Make the Hero the absolute master of the screen */
 #top.hero {
-    width: 100%;
-    height: 100vh;
-    background: url('assets/img/background.png') center no-repeat;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: url('../img/background.png') center center no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    padding-top: 60px;
-    /* Safety catch to ensure no internal scrollbars appear */
-    overflow: hidden; 
+    margin: 0 !important;
 }
 
+/* 3. Ensure the background overlay also covers everything */
 .background-overlay:before {
     content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 
-/* 4. Content Centering */
+/* 4. Center the main content */
 .hero-content {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     z-index: 1;
-    text-align: center;
-    color: #ffffff;
 }
 
-.hero-job span {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #051F1E;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-
-.hero-job a { color: #fff; }
-
-/* 5. Fixed Footer at the very bottom */
+/* 5. Pin the footer to the bottom with zero gap */
 .hero-footer {
+    width: 100%;
     padding-bottom: 20px;
     z-index: 1;
-    width: 100%;
     text-align: center;
 }
 
 .copyright {
     margin: 0;
-    color: #ffffff;
+    color: #fff;
     font-size: 12px;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-/* 6. Animated Arrow */
-.hero-arrow {
-    margin-bottom: 10px;
-    z-index: 1;
-    text-align: center;
-}
-
-.hero-arrow a {
-    font-size: 28px;
-    color: #051F1E;
 }
