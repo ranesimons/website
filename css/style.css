@@ -1,23 +1,16 @@
-/* 1. Global Reset - Essential for 100vh to work */
+/* 1. Global Reset & Lock Viewport */
 html, body {
     width: 100%;
-    height: 100%; /* Keeps the body locked to the screen height */
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: "montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
     background-color: #000;
+    
+    /* This prevents the "bounce" and scrolling */
+    overflow: hidden; 
+    position: fixed; 
 }
-
-a, button {
-    transition: all 0.25s ease-in-out;
-    cursor: pointer;
-    outline: 0 none;
-    text-decoration: none;
-}
-
-a:hover { text-decoration: underline; }
 
 /* 2. Header & Navigation */
 .site-header {
@@ -44,17 +37,19 @@ a:hover { text-decoration: underline; }
     font-size: 14px;
 }
 
-/* 3. Hero Section (The Fix) */
+/* 3. Hero Section (Locked Height) */
 #top.hero {
-    flex: 1 0 auto; /* Fills remaining space */
+    width: 100%;
+    height: 100vh;
     background: url('assets/img/background.png') center no-repeat;
     background-size: cover;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This forces content to split Top, Middle, Bottom */
+    justify-content: space-between;
     position: relative;
-    padding-top: 60px; /* Prevents the header from overlapping centered content */
+    padding-top: 60px;
+    /* Safety catch to ensure no internal scrollbars appear */
+    overflow: hidden; 
 }
 
 .background-overlay:before {
@@ -70,7 +65,7 @@ a:hover { text-decoration: underline; }
 
 /* 4. Content Centering */
 .hero-content {
-    flex-grow: 1; /* This "spacer" pushes the footer down */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,9 +83,9 @@ a:hover { text-decoration: underline; }
 
 .hero-job a { color: #fff; }
 
-/* 5. Footer (Pushed to absolute bottom of hero) */
+/* 5. Fixed Footer at the very bottom */
 .hero-footer {
-    padding: 20px 0 30px 0;
+    padding-bottom: 20px;
     z-index: 1;
     width: 100%;
     text-align: center;
@@ -106,8 +101,9 @@ a:hover { text-decoration: underline; }
 
 /* 6. Animated Arrow */
 .hero-arrow {
-    margin: 0 auto 10px;
+    margin-bottom: 10px;
     z-index: 1;
+    text-align: center;
 }
 
 .hero-arrow a {
