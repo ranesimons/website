@@ -19,7 +19,7 @@ html, body {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: url('../img/background.png') center center no-repeat;
+    background: url('../img/background.webp') center center no-repeat;
     background-size: cover;
     margin: 0 !important;
 }
